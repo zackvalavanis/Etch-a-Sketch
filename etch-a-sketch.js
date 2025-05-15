@@ -24,11 +24,23 @@ button.addEventListener('click', () => {
   }
 })
 
+const divTitle = document.createElement('div')
+divTitle.className = 'div-title'
+document.body.insertBefore(divTitle, container)
+
+
+const title = document.createElement('h1')
+title.textContent = 'Draw Time!'
+divTitle.appendChild(title)
+
+const directions = document.createElement('p')
+directions.textContent = 'Click a box to start drawing. Click again to stop!'
+divTitle.appendChild(directions)
+
 
 const divButton = document.createElement('div')
 divButton.className = 'button-container'
 document.body.insertBefore(divButton, container)
-
 
 const buttonRefresh = document.createElement('button')
 buttonRefresh.textContent = 'Refresh'
