@@ -67,6 +67,8 @@ function createGrid(size) {
     cell.style.height = `${squareSize}px`
     cell.style.border = `1px solid black`
 
+    cell.dataset.opacity = '0';
+
     cell.dataset.activated = 'false'
 
     cell.addEventListener('click', () => {
@@ -74,8 +76,16 @@ function createGrid(size) {
     })
 
     cell.addEventListener('mouseover', () => {
-      if(gridUnlocked) { 
-        cell.style.backgroundColor = 'black';
+ 
+
+      if (gridUnlocked) {
+        let opacity = parseFloat(cell.dataset.opacity);
+        if (opacity < 1) {
+          opacity += 0.1;
+          opacity = Math.min(opacity, 1);
+          cell.dataset.opacity = opacity;
+          cell.style.backgroundColor = `rgba(0,0,0,${opacity})`;
+        }
       }
     });
 
