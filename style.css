@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+.container-all {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 640px;
+  height: 640px;
+  border: 1px solid black; */
+}
+
+.container-all div {
+  width: 39.8px;
+  height: 39.8px;
+  border: 1px solid black;
+}
+
+.container-all div:hover {
+  background-color: black;
+}
